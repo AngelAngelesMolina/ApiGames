@@ -1,4 +1,4 @@
 package com.jaamcoding.apigames.data
 
-interface GameApi {
+interface ApiGames {
 }

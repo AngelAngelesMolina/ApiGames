@@ -1,6 +1,6 @@
 package com.jaamcoding.apigames.di
 
-import com.jaamcoding.apigames.data.GameApi
+import com.jaamcoding.apigames.data.ApiGames
 import com.jaamcoding.apigames.utils.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -15,13 +15,19 @@ import javax.inject.Singleton
 object AppModule {
     @Provides
     @Singleton
-    fun provideGameApi(): GameApi {
+    fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(GameApi::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideApiGames(retrofit: Retrofit): ApiGames {
+        return retrofit.create(ApiGames::class.java)
+    }
+
 
 
 }
