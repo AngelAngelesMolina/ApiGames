@@ -1,4 +1,4 @@
-package com.jaamcoding.apigames
+package com.jaamcoding.apigames.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

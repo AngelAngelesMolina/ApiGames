@@ -1,4 +1,4 @@
-package com.jaamcoding.apigames.di
+package com.jaamcoding.apigames.data.di
 
 import com.jaamcoding.apigames.data.ApiGames
 import com.jaamcoding.apigames.utils.Constants.Companion.BASE_URL
