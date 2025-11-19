@@ -23,21 +23,21 @@ import com.jaamcoding.apigames.ui.theme.CustomBlack
 @Composable
 fun HomeView(
     vm: GamesViewModel,
-    navControler: NavController
+    navController: NavController
 ) {
     Scaffold(
         topBar = {
             MainTopBar(title = "API GAMES")
         }
     ) { innerPadding ->
-        ContentHomeView(vm = vm, pad = innerPadding)
+        ContentHomeView(vm = vm, pad = innerPadding, navController)
     }
 
 
 }
 
 @Composable
-fun ContentHomeView(vm: GamesViewModel, pad: PaddingValues) {
+fun ContentHomeView(vm: GamesViewModel, pad: PaddingValues, navController: NavController) {
     val games by vm.games.collectAsState()
     LazyColumn(
         modifier = Modifier
@@ -45,7 +45,9 @@ fun ContentHomeView(vm: GamesViewModel, pad: PaddingValues) {
             .background(CustomBlack)
     ) {
         items(games) { game ->
-            CardGame(game, {})
+            CardGame(game, {
+                navController.navigate("DetailView/${game.id}")
+            })
             Text(
                 text = game.name, fontWeight = FontWeight.ExtraBold,
                 color = Color.White,
