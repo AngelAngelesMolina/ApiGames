@@ -25,9 +25,10 @@ class MainActivity : ComponentActivity() {
         val viewModel : GamesViewModel by viewModels()
         setContent {
             ApiGamesTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HomeView(vm = viewModel, modifier = Modifier.padding(innerPadding))
-                }
+//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+//                    HomeView(vm = viewModel)
+//                }
+                HomeView(vm = viewModel)
             }
         }
     }
