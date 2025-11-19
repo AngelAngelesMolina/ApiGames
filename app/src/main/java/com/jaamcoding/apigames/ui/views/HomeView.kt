@@ -15,13 +15,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.jaamcoding.apigames.ui.components.CardGame
 import com.jaamcoding.apigames.ui.components.MainTopBar
 import com.jaamcoding.apigames.ui.theme.CustomBlack
 
 @Composable
 fun HomeView(
-    vm: GamesViewModel
+    vm: GamesViewModel,
+    navControler: NavController
 ) {
     Scaffold(
         topBar = {
@@ -37,9 +39,11 @@ fun HomeView(
 @Composable
 fun ContentHomeView(vm: GamesViewModel, pad: PaddingValues) {
     val games by vm.games.collectAsState()
-    LazyColumn(modifier = Modifier
-        .padding(pad)
-        .background(CustomBlack)) {
+    LazyColumn(
+        modifier = Modifier
+            .padding(pad)
+            .background(CustomBlack)
+    ) {
         items(games) { game ->
             CardGame(game, {})
             Text(

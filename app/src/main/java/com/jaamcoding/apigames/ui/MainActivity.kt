@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.jaamcoding.apigames.navigation.NavManager
 import com.jaamcoding.apigames.ui.theme.ApiGamesTheme
 import com.jaamcoding.apigames.ui.viewmodel.GamesViewModel
 import com.jaamcoding.apigames.ui.views.HomeView
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 //                    HomeView(vm = viewModel)
 //                }
-                HomeView(vm = viewModel)
+                NavManager(gamesVm = viewModel)
             }
         }
     }
