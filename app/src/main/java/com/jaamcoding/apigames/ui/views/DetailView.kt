@@ -30,12 +30,15 @@ fun DetailView(viewModel: GamesViewModel, navController: NavController, id: Int)
         viewModel.getGameById(id)
     }
 
-    Scaffold(topBar = {
-        MainTopBar(
-            title = viewModel.state.name,
-            showBackButton = true,
-            onClickBackButton = { navController.popBackStack() })
-    }) { paddingValues ->
+    Scaffold(
+        topBar = {
+            MainTopBar(
+                title = viewModel.state.name,
+                showBackButton = true,
+                onClickBackButton = { navController.popBackStack() })
+        },
+        containerColor = CustomBlack
+    ) { paddingValues ->
         ContentDetailView(paddingValues, viewModel)
     }
 }

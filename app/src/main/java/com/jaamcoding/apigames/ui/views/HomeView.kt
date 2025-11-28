@@ -28,7 +28,8 @@ fun HomeView(
     Scaffold(
         topBar = {
             MainTopBar(title = "API GAMES")
-        }
+        },
+        containerColor = CustomBlack
     ) { innerPadding ->
         ContentHomeView(vm = vm, pad = innerPadding, navController)
     }
