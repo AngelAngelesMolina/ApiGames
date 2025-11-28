@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.jaamcoding.apigames.ui.components.MainImage
 import com.jaamcoding.apigames.ui.components.MainTopBar
+import com.jaamcoding.apigames.ui.components.MetaWebsite
 import com.jaamcoding.apigames.ui.theme.CustomBlack
 import com.jaamcoding.apigames.ui.viewmodel.GamesViewModel
 
@@ -59,7 +60,7 @@ fun ContentDetailView(pad: PaddingValues, viewModel: GamesViewModel) {
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 5.dp)
         ) {
-            Text(text = viewModel.state.name, color = Color.Black)
+            MetaWebsite(state.website)
         }
     }
 
