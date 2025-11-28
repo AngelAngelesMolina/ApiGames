@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -26,9 +27,9 @@ class MainActivity : ComponentActivity() {
         val viewModel : GamesViewModel by viewModels()
         setContent {
             ApiGamesTheme {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    HomeView(vm = viewModel)
-//                }
+               /* Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    HomeView(vm = viewModel)
+                }*/
                 NavManager(gamesVm = viewModel)
             }
         }

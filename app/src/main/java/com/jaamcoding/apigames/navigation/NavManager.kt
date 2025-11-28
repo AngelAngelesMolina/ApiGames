@@ -1,7 +1,6 @@
 package com.jaamcoding.apigames.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHost
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,7 +12,6 @@ import com.jaamcoding.apigames.ui.views.HomeView
 
 @Composable
 fun NavManager(gamesVm: GamesViewModel) {
-
     val navController = rememberNavController()
     NavHost(navController, startDestination = "Home") {
         composable("Home") {
